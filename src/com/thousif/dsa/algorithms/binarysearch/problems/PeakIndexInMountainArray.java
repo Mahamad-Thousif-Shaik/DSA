@@ -1,6 +1,8 @@
 package com.thousif.dsa.algorithms.binarysearch.problems;
 //https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
-public class PeakIndexInMountainarray {
+//Here, Mountain array means, it has sorted and contains only one peak element.
+
+public class PeakIndexInMountainArray {
     public static void main(String[] args) {
         int[] nums = {0,5,12,7,4};
         System.out.println(findPeak(nums));
