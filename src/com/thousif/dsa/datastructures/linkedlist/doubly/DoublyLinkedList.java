@@ -72,6 +72,30 @@ public class DoublyLinkedList<T> {
         }
     }
 
+    public T delete(int index){
+        checkElementIndex(index);
+        Node currentNode = getNode(index);
+        T element = currentNode.value;
+        Node prevNode = currentNode.prev;
+        Node nextNode = currentNode.next;
+
+        if(prevNode == null){
+            head  = nextNode;
+        }else{
+            prevNode.next = nextNode;
+            currentNode.prev = null;
+        }
+
+        if(nextNode == null){
+            tail = prevNode;
+        }else{
+            nextNode.prev = prevNode;
+            currentNode.next = null;
+        }
+        currentNode.value = null;
+        return element;
+    }
+
     private void linkBefore(T value, Node nextNode){
         Node prevNode = nextNode.prev;
         Node newNode = new Node(prevNode, value, nextNode);

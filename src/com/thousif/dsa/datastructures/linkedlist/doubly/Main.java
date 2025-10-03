@@ -10,7 +10,9 @@ public class Main {
         list.add(6);
         list.add(4, 5);
         list.add(6, 7);
+        System.out.println(list.delete(0));
         list.print();
         list.printRev();
+
     }
 }
