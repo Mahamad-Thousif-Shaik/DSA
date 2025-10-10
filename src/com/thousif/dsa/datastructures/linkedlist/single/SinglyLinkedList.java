@@ -19,6 +19,7 @@ public class SinglyLinkedList<T> {
     }
 
     public void print() {
+
         Node current = head;
         while (current != null) {
             System.out.print(current.value + " ");
@@ -71,6 +72,32 @@ public class SinglyLinkedList<T> {
             currentNode.next = newNode;
             size++;
         }
+    }
+
+    //Insert using recursion
+    //Assuming size is not provided
+    public void insertRec(int index, T value){
+        Node newNode = new Node(value);
+        if(index == 0){
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node prevNode = helperRec(index-1, head);
+        if(prevNode.next == null){
+            prevNode.next = newNode;
+            tail = newNode;
+            return;
+        }
+        newNode.next = prevNode.next;
+        prevNode.next = newNode;
+    }
+
+    private Node helperRec(int index, Node currentNode){
+        if(index == 0){
+            return currentNode;
+        }
+        return helperRec(index-1, currentNode.next);
     }
 
     public T deleteFirst() {

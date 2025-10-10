@@ -20,5 +20,7 @@ public class Main {
         System.out.println(list.delete(4));
         list.print();
         System.out.println(list.size());
+        list.insertRec(3, 10);
+        list.print();
     }
 }
