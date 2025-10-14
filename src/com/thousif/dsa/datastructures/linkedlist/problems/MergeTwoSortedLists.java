@@ -8,27 +8,28 @@ package com.thousif.dsa.datastructures.linkedlist.problems;
 public class MergeTwoSortedLists {
 
     //Definition for singly-linked list.
-    static class ListNode1 {
+    static class ListNode {
         int val;
-        ListNode1 next;
+        ListNode next;
 
-        ListNode1() {
+        ListNode() {
         }
 
-        ListNode1(int val) {
+        ListNode(int val) {
             this.val = val;
         }
 
-        ListNode1(int val, ListNode1 next) {
+        ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;
         }
     }
 
-    static class Solution {
-        public ListNode1 mergeTwoLists(ListNode1 list1, ListNode1 list2) {
-            ListNode1 result = new ListNode1(-1);
-            ListNode1 ans = result;
+    static class Solution{
+        public ListNode mergeTwoLists(ListNode list1, ListNode list2){
+
+            ListNode result = new ListNode(-1);
+            ListNode ans = result;
             while(list1 != null && list2 != null){
                 if(list1.val <= list2.val){
                     result.next = list1;
@@ -40,7 +41,6 @@ public class MergeTwoSortedLists {
                 }
                 result = result.next;
             }
-
             if(list1 != null){
                 result.next = list1;
             }
@@ -51,11 +51,37 @@ public class MergeTwoSortedLists {
         }
     }
 
+//    static class Solution {
+//        public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+//            ListNode result = new ListNode(-1);
+//            ListNode ans = result;
+//            while(list1 != null && list2 != null){
+//                if(list1.val <= list2.val){
+//                    result.next = list1;
+//                    list1 = list1.next;
+//                }
+//                else{
+//                    result.next = list2;
+//                    list2 = list2.next;
+//                }
+//                result = result.next;
+//            }
+//
+//            if(list1 != null){
+//                result.next = list1;
+//            }
+//            else{
+//                result.next = list2;
+//            }
+//            return ans.next;
+//        }
+//    }
+
     public static void main(String[] args) {
-        ListNode1 list1 = new ListNode1(1, new ListNode1(2, new ListNode1(4)));
-        ListNode1 list2 = new ListNode1(1, new ListNode1(3, new ListNode1(4)));
+        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+        ListNode list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
         Solution sol = new Solution();
-        ListNode1 result = sol.mergeTwoLists(list1, list2);
+        ListNode result = sol.mergeTwoLists(list1, list2);
         while(result!=null){
             System.out.println(result.val);
             result = result.next;
