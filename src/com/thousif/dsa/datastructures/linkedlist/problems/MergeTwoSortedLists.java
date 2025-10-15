@@ -8,7 +8,7 @@ package com.thousif.dsa.datastructures.linkedlist.problems;
 public class MergeTwoSortedLists {
 
     //Definition for singly-linked list.
-    static class ListNode {
+    private static class ListNode {
         int val;
         ListNode next;
 
@@ -25,9 +25,8 @@ public class MergeTwoSortedLists {
         }
     }
 
-    static class Solution{
-        public ListNode mergeTwoLists(ListNode list1, ListNode list2){
-
+    private static class Solution {
+        public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
             ListNode result = new ListNode(-1);
             ListNode ans = result;
             while(list1 != null && list2 != null){
@@ -41,6 +40,7 @@ public class MergeTwoSortedLists {
                 }
                 result = result.next;
             }
+
             if(list1 != null){
                 result.next = list1;
             }
@@ -50,32 +50,6 @@ public class MergeTwoSortedLists {
             return ans.next;
         }
     }
-
-//    static class Solution {
-//        public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-//            ListNode result = new ListNode(-1);
-//            ListNode ans = result;
-//            while(list1 != null && list2 != null){
-//                if(list1.val <= list2.val){
-//                    result.next = list1;
-//                    list1 = list1.next;
-//                }
-//                else{
-//                    result.next = list2;
-//                    list2 = list2.next;
-//                }
-//                result = result.next;
-//            }
-//
-//            if(list1 != null){
-//                result.next = list1;
-//            }
-//            else{
-//                result.next = list2;
-//            }
-//            return ans.next;
-//        }
-//    }
 
     public static void main(String[] args) {
         ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
