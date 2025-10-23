@@ -1,9 +1,6 @@
 package com.thousif.dsa.datastructures.linkedlist.problems;
 
-
-
-
-
+//https://leetcode.com/problems/merge-two-sorted-lists/description/
 
 public class MergeTwoSortedLists {
 

@@ -41,7 +41,6 @@ public class RemoveSortedList {
     public static void main(String[] args) {
         ListNode node = new ListNode(1, new ListNode(1, new ListNode(2)));
         RemoveSortedList rem = new RemoveSortedList();
-        rem.deleteDuplicates(node);
     }
 }
 

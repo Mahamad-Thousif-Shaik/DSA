@@ -1,5 +1,7 @@
 package com.thousif.dsa.datastructures.linkedlist.problems;
 
+//https://leetcode.com/problems/linked-list-cycle/description/
+
 public class LinkedListCycle {
 
     private static class ListNode {

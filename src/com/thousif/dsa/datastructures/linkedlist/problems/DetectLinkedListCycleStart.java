@@ -2,8 +2,6 @@ package com.thousif.dsa.datastructures.linkedlist.problems;
 
 //https://leetcode.com/problems/linked-list-cycle-ii/
 
-import java.util.List;
-
 public class DetectLinkedListCycleStart {
 
 
